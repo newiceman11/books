@@ -15,16 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('books','BookController');
 
-Route::get('/admin', function () {
-    return view('admin');
+
+Route::get('/admin/crud', function () {
+    return view('books.index');
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 // admin route grup
-Route::group(['middleware'=>'auth','namespace'=>'Admin'],function(){
-  Route::get('/usuarios','UserController@index');  
+Route::group(['middleware' => ['auth', 'admin']], function() {
+  Route::resource('books','BookController');
+
+  Route::get('/admin/crud', function () {
+      return view('books.index');
+  });
+  Route::get('/admin/dashboard', function () {
+      return redirect('/books');
+  });
 });

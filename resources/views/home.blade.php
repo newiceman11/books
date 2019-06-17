@@ -14,23 +14,23 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Estás logueado!
                 </div>
             </div>
         </div>
-      <!--@if(Auth::user()->role==1)-->
+      @if(Auth::user()->type=='admin')
         <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Roles
   </button>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="admin/crud">usuarios</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    <a class="dropdown-item" href="admin/dashboard">CRUD libros</a>
+    <a class="dropdown-item" href="#">Perfil de usuarios</a>
+    <a class="dropdown-item" href="#">Extras</a>
   </div>
 </div>
     </div>
-<!--@endif-->
+@endif
 </div>
 @endsection

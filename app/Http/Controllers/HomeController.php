@@ -28,7 +28,8 @@ class HomeController extends Controller
 
     public function admin(Request $req){
 
-      return view('home');
+      $books = book::paginate(15);
+      return view('books.index', ['array_books' => $books]);
 
 }
 }

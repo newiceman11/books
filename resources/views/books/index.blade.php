@@ -1,9 +1,5 @@
 @extends('books.layout')
 @section('content')
-<style>
-    
-  
-</style>
 
 <!-- slider-->
   <div class="wrap">

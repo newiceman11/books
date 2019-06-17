@@ -17,7 +17,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        
+
         $books = book::paginate(15);
         return view('books.index', ['array_books' => $books]);
     }
@@ -47,12 +47,12 @@ class BookController extends Controller
 
         Book::create($request->all());
 
-       
+
         Session::flash('message','Libro creado correctamente');
         return redirect()->route('books.index');
 
-       
-       
+
+
 
     }
 
@@ -75,9 +75,9 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        
+
          return view('books.edit',compact('book'));
-        
+
     }
 
     /**

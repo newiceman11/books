@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
                'name'=>'Diego',
                'email'=>'admin@admin.com',
                'password'=>  bcrypt('123456'),
-               'role'=>1,
+               'type'=>'admin',
                //password=123456
          ]);
 
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
                'name'=>'Matias',
                'email'=>'user3@auser3.com',
                'password'=>  bcrypt('123456'),
-               'role'=>0,
+               'type'=>'user',
                //password=123456
          ]);
 
@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
                'name'=>'Juan',
                'email'=>'user@user.com',
                'password'=>  bcrypt('123456'),
-               'role'=>0,
+               'type'=>'user',
                //password=123456
          ]);
 

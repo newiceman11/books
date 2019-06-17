@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  Mi página
+                  Mi sitio web
                 </div>
 
                 <div class="links">
