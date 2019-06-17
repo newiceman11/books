@@ -23,3 +23,8 @@ Route::get('/admin', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// admin route grup
+Route::group(['middleware'=>'auth','namespace'=>'Admin'],function(){
+  Route::get('/usuarios','UserController@index');  
+});
