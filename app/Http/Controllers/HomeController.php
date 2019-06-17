@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function admin(Request $req){
+
+      return view('home');
+
+}
 }

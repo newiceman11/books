@@ -18,17 +18,19 @@
                 </div>
             </div>
         </div>
+      <!--@if(Auth::user()->role==1)-->
         <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Roles
   </button>
+
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Admin</a>
+    <a class="dropdown-item" href="admin/crud">usuarios</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
   </div>
 </div>
     </div>
-    
+<!--@endif-->
 </div>
 @endsection

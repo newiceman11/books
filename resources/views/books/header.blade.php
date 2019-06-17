@@ -12,7 +12,11 @@
         <a class="nav-link" href="#">Nuestos libros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Salir</a>
+        <a class="nav-link" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                       document.getElementById('logout-form').submit();">Salir</a>
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                           @csrf
+                       </form>
       </li>
       <!--<li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
