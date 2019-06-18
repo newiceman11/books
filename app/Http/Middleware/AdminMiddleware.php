@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Illuminate\Http\Response;
 class AdminMiddleware
 {
     /**
@@ -17,7 +17,7 @@ class AdminMiddleware
     {
 
           if (!auth()->check() || auth()->user()->type != "admin") {
-              abort(403, 'Unauthorized action.');
+            return new response(view('homepage'));
           }
 
           return $next($request);

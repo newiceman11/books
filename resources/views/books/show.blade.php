@@ -4,8 +4,7 @@
 
 <div class="container">
     <br>
-    <button type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
-<br>
+
 <br>
    <div class="card">
       <div class="card-header">
@@ -17,7 +16,7 @@
           <footer class="blockquote-footer">{{$book->created_at}}</footer>
         </blockquote>
       </div>
-    </div> 
+    </div>
 </div>
 
 

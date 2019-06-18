@@ -2,9 +2,9 @@
 @section('content')
 
 @if(Auth::user()->type == "admin")
-<div class="grid-page">
-  <div class="menu-container">
-    <h2 align="center" style="color:#b3b3b3";>Menú de Admin</h2>
+<div class="grid-page" >
+  <div class="menu-container" >
+    <h2 align="center" style="color:#b3b3b3; margin-top: 10px;">Menú de Admin</h2>
     <nav>
       <ul class="nav-bar">
         <li>
@@ -29,11 +29,11 @@
     </nav>
   </div>
   <div class="option">
-    <h2 id="title" onclick="clickChange()">Listado de usuarios</h2>
+    <h2 id="title" onclick="clickChange()" style="margin-top: 10px;">Listado de usuarios</h2>
     <div class="container">
       <br>
       <table class="table table-dark">
-        <a class= "btn btn-info btn mb-3" href="">Agregar usuarios</a>
+        <a class= "btn btn-info btn mb-3" href="{{route('users.create')}}">Agregar usuarios</a>
         @if (Session::has('success_msg'))
         <div class="alert alert-info">{{ Session::get('success_msg') }}</div>
         @endif
@@ -84,6 +84,8 @@
     </div>
   </div>
 </div>
+@else
+<h2>hola</h2>
 @endif
 @endsection
 <script>

@@ -4,8 +4,7 @@
 <br>
 <div class="container">
        <br>
-    <button type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
-<br>
+
   <h1 class="text-center">EDITAR LIBROS</h1>
   <br>
 

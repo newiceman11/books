@@ -28,7 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // admin route grup
 Route::group(['middleware' => ['auth', 'admin']], function() {
   Route::resource('books','BookController');
-
+  Route::resource('users','UserController');
   Route::get('/admin/crud', function () {
       return view('books.index');
   });

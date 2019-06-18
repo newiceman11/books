@@ -25,19 +25,23 @@
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
           </form>
-          <a class="dropdown-item" href="#">Another action</a>
+          <!--<a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>-->
         @endguest
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn text-secondary my-2 my-sm-0" type="submit">Buscar</button>
+      <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+      @if(Request::is ('/'))
+      @else
+            <button type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
+      @endif
+  <br>
     </form>
   </div>
 </nav>
