@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href=".././css/master.css"/>
+    <link rel="stylesheet" href=".././css/styles.css"/>
     <script src="jquery-3.4.0.min.js"></script>
     @include('books.header')
     @yield('content')

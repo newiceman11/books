@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
+Route::get('/logout', 'Auth\LoginController@logout');
 
 
 Route::get('/admin/crud', function () {
