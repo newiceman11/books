@@ -1,9 +1,9 @@
 <?php
 
-namespace MyWeb\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use MyWeb\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {

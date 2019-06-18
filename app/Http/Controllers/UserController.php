@@ -1,7 +1,7 @@
 <?php
 //php artisan make:controller UserController --resource
-namespace MyWeb\Http\Controllers;
-use MyWeb\user;
+namespace App\Http\Controllers;
+use App\user;
 use Illuminate\Http\Request;
 use Session;
 

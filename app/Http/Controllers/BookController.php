@@ -1,8 +1,8 @@
 <?php
 
-namespace MyWeb\Http\Controllers;
+namespace App\Http\Controllers;
 
-use MyWeb\Book;
+use App\Book;
 use Illuminate\Http\Request;
 use Session;
 
@@ -59,7 +59,7 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \MyWeb\Book  $book
+     * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function show(Book $book)
@@ -70,7 +70,7 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \MyWeb\Book  $book
+     * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function edit(Book $book)
@@ -84,7 +84,7 @@ class BookController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \MyWeb\Book  $book
+     * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Book $book)
@@ -105,7 +105,7 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \MyWeb\Book  $book
+     * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function destroy(Book $book)

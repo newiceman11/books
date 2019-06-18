@@ -1,8 +1,6 @@
 @extends('books.layout')
 @section('content')
-@php
- $array_users = \App\user::paginate(15);
-@endphp
+
 @if(Auth::user()->type == "admin")
 <div class="grid-page">
   <div class="menu-container">
@@ -57,6 +55,9 @@
           </tr>
         </thead>
         <tbody>
+          @php
+           $array_users = \App\user::paginate(15);
+          @endphp
           @foreach($array_users as $user)
           <tr>
 
