@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsersTableSeeder::class);
         $this->call(BooksTableSeeder::class);
+        $this->call(ItemsTableSeeder::class);
     }
 }
 // write on terminal
