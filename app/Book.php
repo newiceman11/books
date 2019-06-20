@@ -8,8 +8,12 @@ class Book extends Model
 {
 
       protected $fillable = [
-     'title','description'
+     'title','description','author_id'
     ];
+
+    public function bookBelongTo()
+{
+   return $this->belongsTo(Author::class);
 }
 
-
+}

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Book;
 use Illuminate\Http\Request;
 use Session;
-
+use DB;
 
 
 class BookController extends Controller
@@ -20,6 +20,9 @@ class BookController extends Controller
 
         $books = book::paginate(15);
         return view('books.index', ['array_books' => $books]);
+        /*$all_data = DB::table('books')->join('authors', 'id', '=',
+        'books.author_id')->paginate(15);
+        return View::make('/all_data')->with("array_books",$all_data);*/
     }
 
     /**

@@ -46,14 +46,9 @@
         @foreach($array_books as $book)
       <tr>
 
-        <th scope="row">{{$book->id}}</th>
+        <th scope="row">{{$book->author}}</th>
         <td>{{$book->title}}</td>
         <td>{{$book->description}}</td>
-
-
-
-
-
       </tr>
   @endforeach
     </tbody>
