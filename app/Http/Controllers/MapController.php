@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FileDownloadController extends Controller
+class MapController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,14 +13,14 @@ class FileDownloadController extends Controller
      */
     public function index()
     {
-        return view('books.myPDF');
+        //
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-   }
     public function create()
     {
         //
@@ -81,12 +81,4 @@ class FileDownloadController extends Controller
     {
         //
     }
-    public function subirArchivo(Request $request)
-{
-       //Recibimos el archivo y lo guardamos en la carpeta storage/app/public
-       $request->file('archivo')->store('public');
-      return redirect('books')->withSuccess('Cargado correctamante');
-
-}
-
 }

@@ -118,4 +118,10 @@ class BookController extends Controller
         return redirect()->route('books.index');
 
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    
 }

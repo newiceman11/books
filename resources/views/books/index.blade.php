@@ -26,6 +26,7 @@
         <th scope="col">EDITAR</th>
           <th scope="col">ELIMINAR</th>
             <th scope="col">MOSTRAR</th>
+            <th scope="col">+PDF</th>
       </tr>
     </thead>
     <tbody>
@@ -46,6 +47,7 @@
              </form>
         </td>
         <td> <a href="{{ route('books.show',$book->id) }}"><button class="btn btn-success">Mostrar</button></a></td>
+          <td> <a href="{{ route('books.PDF') }}"><button class="btn btn-success">Subir</button></a></td>
 
 
 

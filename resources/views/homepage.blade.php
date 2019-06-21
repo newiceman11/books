@@ -1,6 +1,7 @@
 @extends('books.layout')
 @section('content')
 <!-- slider-->
+
   <div class="wrap">
   <header>
     <label for="slide-1-trigger">Slide 1</label>
@@ -26,10 +27,21 @@
   </section>
 </div>
 <!--endslider-->
+   </form>
+
+
+       <form action="" ng-controller="MainCtrl"  name="toDoForm" novalidate style="padding-top:40px;">
+        <div class="form-group">
+          <input type="text" placeholder="Ingresar titulo de libro" id="add-to-list" ng-model="task" class="form-control" required>
+          <button class="btn add-btn" ng-click="add()" ng-disabled="toDoForm.$invalid">Buscar</button>
+        </div>
+      </form>
+
+</div>
 <div class="container">
   <h1>Listado de libros</h1>
   <br>
-  <table class="table table-dark">
+  <table class="table table-dark" style="padding-top:100px!important;">
 
     <thead>
       <tr>
@@ -53,6 +65,6 @@
   @endforeach
     </tbody>
   </table>
-{{$array_books->links()}}
+  {{$array_books->links()}}
 </div>
 @endsection

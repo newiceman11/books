@@ -37,11 +37,12 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-      @if(Request::is ('/'))
-      @else
-            <button type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
-      @endif
+
   <br>
     </form>
   </div>
+  @if(Request::is ('/'))
+  @else
+        <button type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
+  @endif
 </nav>
