@@ -55,9 +55,6 @@
           </tr>
         </thead>
         <tbody>
-          @php
-           $array_users = \App\user::paginate(15);
-          @endphp
           @foreach($array_users as $user)
           <tr>
 

@@ -1,8 +1,8 @@
-@extends('books.layout')
+ @extends('books.layout')
 @section('content')
-
-
-
+@php
+ $array_users = \App\user::paginate(15);
+@endphp
 <div class="container">
 
   <h1>Listado de libros</h1>
@@ -25,14 +25,13 @@
         <th scope="col">RESEÑA</th>
         <th scope="col">EDITAR</th>
           <th scope="col">ELIMINAR</th>
-            <th scope="col">MOSTRAR</th>
+            <th scope="col">MOSTAR</th>
             <th scope="col">+PDF</th>
       </tr>
     </thead>
     <tbody>
         @foreach($array_books as $book)
       <tr>
-
         <th scope="row">{{$book->id}}</th>
         <td>{{$book->title}}</td>
         <td>{{$book->description}}</td>
@@ -41,13 +40,12 @@
               <form action="{{ route('books.destroy',$book->id) }}" method="POST">
                          @csrf
                          @method('DELETE')
-
                <button type="submit" class="btn btn-danger" onclick="return confirm('Quiere borrar el registro?')" >Eliminar</button>
 
              </form>
         </td>
         <td> <a href="{{ route('books.show',$book->id) }}"><button class="btn btn-success">Mostrar</button></a></td>
-          <td> <a href="{{ route('books.PDF') }}"><button class="btn btn-success">Subir</button></a></td>
+          <td> <a href="{{ route('pdf') }}"><button class="btn btn-success">Subir</button></a></td>
 
 
 

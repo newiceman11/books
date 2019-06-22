@@ -30,9 +30,10 @@
    </form>
 
 
-       <form action="" ng-controller="MainCtrl"  name="toDoForm" novalidate style="padding-top:40px;">
+       <form action="/search" method="POST" role="search" ng-controller="MainCtrl"  name="toDoForm" novalidate style="padding-top:40px;">
+          @csrf
         <div class="form-group">
-          <input type="text" placeholder="Ingresar titulo de libro" id="add-to-list" ng-model="task" class="form-control" required>
+          <input name="q" type="text" placeholder="Ingresar titulo de libro" id="add-to-list" ng-model="task" class="form-control" required>
           <button class="btn add-btn" ng-click="add()" ng-disabled="toDoForm.$invalid">Buscar</button>
         </div>
       </form>

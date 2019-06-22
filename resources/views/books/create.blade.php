@@ -1,10 +1,13 @@
 @extends('books.layout')
 @section('content')
+@php
+  $array_authors = \App\Author::all();
+@endphp
 <br>
 <div class="container">
        <br>
 
-  <h1 class="text-center">AGREAGAR LIBROS</h1>
+  <h1 class="text-center">AGREGAR LIBROS</h1>
   <br>
 
   <form method="POST" action="{{route('books.store')}}">
@@ -14,9 +17,14 @@
       <input name="title" class="form-control col-xl-3 col-md3 col-sm-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titulo">
 
     </div>
+    <select  class="form-control col-xl-3 col-md3 col-sm-4 " id="combobox" name="author_id" >
+      @foreach($array_authors as $author)
+        <option value="{{$author->id}}">{{$author->name}}</option>
+      @endforeach
+    </select>
     <div class="form-group">
       <label for="exampleInputPassword1">Descripcion</label>
-      <textarea name="description" class="form-control" id="exampleInputPassword1" placeholder="descripcion">
+      <textarea name="description" class="form-control-md" id="exampleInputPassword1" placeholder="descripcion">
       </textarea>
     </div>
 
