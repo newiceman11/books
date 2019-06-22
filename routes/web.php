@@ -26,6 +26,9 @@ Route::get('/upload-pdf', 'PDFController@index')->name('pdf');
 //Route::resource('item','ItemController');
 Route::resource('map','MapController');
   // END admin
+  Route::get('books-admin', function () {
+      return view('books.index');
+  });
 });
 /***************serach********/
 Route::any('/search',function(){

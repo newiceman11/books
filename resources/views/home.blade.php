@@ -1,6 +1,8 @@
 @extends('books.layout')
 @section('content')
-
+@php
+ $array_users = \App\user::paginate(15);
+@endphp
 @if(Auth::user()->type == "admin")
 <div class="grid-page" >
   <div class="menu-container" >
@@ -8,7 +10,7 @@
     <nav>
       <ul class="nav-bar">
         <li>
-          <a href=" {{ route('books.index') }}" onclick="clickChange(this.innerHTML)">Libros</a>
+          <a href="{{ url('books-admin') }}" onclick="clickChange(this.innerHTML)">Libros</a>
         </li>
         <li>
           <a href="#" onclick="clickChange(this.innerHTML)">Tiempo</a>

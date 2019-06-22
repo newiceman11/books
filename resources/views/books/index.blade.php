@@ -1,7 +1,7 @@
  @extends('books.layout')
 @section('content')
 @php
- $array_users = \App\user::paginate(15);
+ $array_books = \App\Book::paginate(15);
 @endphp
 <div class="container">
 
