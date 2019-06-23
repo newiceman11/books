@@ -14,11 +14,10 @@ class CreateAuthorsTable extends Migration
     public function up()
     {
         Schema::create('authors', function (Blueprint $table) {
-            $table->integer('id');
+            $table->unsignedInteger('id');
             $table->string('name');
             $table->string('last name');
             $table->timestamps();
-            
             $table->primary('id');
         });
     }

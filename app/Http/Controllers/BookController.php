@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Author;
+use DB;
 use App\Book;
 use Illuminate\Http\Request;
 use Session;
@@ -18,8 +19,19 @@ class BookController extends Controller
     public function index()
     {
 
-        $books = book::paginate(15);
-        return view('homepage', ['books' => $books]);
+      //$books=Book::select('title','description')->with('authors')->get();
+      //return view('homepage', ['array_books' => $books]);
+
+      /*$books =Book::select('title','description')
+      ->with('authors')
+      ->get();
+      return view('homepage', ['array_books' => $books]);*/
+
+      $books= DB::table('books')
+                  ->join('authors', 'authors.id', '=', 'books.author_id')
+                  ->select('books.*','authors.name')
+                  ->get();
+                  return view('homepage', ['array_books' => $books]);
     }
 
     /**
@@ -49,7 +61,7 @@ class BookController extends Controller
 
 
         Session::flash('message','Libro creado correctamente');
-        return redirect()->route('books.index');
+        return view('books.index');
 
 
 
@@ -112,7 +124,7 @@ class BookController extends Controller
     {
         $book->delete();
         Session::flash('message','Libro ha sido borrado  correctamente');
-        return redirect()->route('books.index');
+        return view('books.index');
 
     }
 }

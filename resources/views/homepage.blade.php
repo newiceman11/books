@@ -46,26 +46,25 @@
 
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">NOMBRE</th>
         <th scope="col">TITULO</th>
         <th scope="col">RESEÑA</th>
 
       </tr>
     </thead>
-    @php
-      $array_books = \App\Book::paginate(15);
-    @endphp
+
     <tbody>
+      @if(!empty($array_books))
         @foreach($array_books as $book)
       <tr>
-
-        <th scope="row">{{$book->author}}</th>
+        <th scope="row">{{$book->name}}</th>
         <td>{{$book->title}}</td>
         <td>{{$book->description}}</td>
       </tr>
   @endforeach
+  @endif
     </tbody>
   </table>
-  {{$array_books->links()}}
+
 </div>
 @endsection

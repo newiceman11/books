@@ -1,4 +1,4 @@
-<footer id="footer" class="footer-1">
+<footer id="footer" class="footer-1" style="padding-top: 20px;">
 <div class="main-footer widgets-dark typo-light">
 <div class="container">
 <div class="row">
