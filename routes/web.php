@@ -1,6 +1,5 @@
 <?php
-Use App\Book;
-use Illuminate\Support\Facades\Input;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
