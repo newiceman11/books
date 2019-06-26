@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+Use App\Book;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -80,5 +81,13 @@ class SearchController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function Searching(){
+      $q = Input::get ( 'q' );
+      $search_book = Book::where('title','LIKE','%'.$q.'%')->get ();/*orWhere('email','LIKE','%'.$q.'%')->get();*/
+      if ($search_book)
+      return view('search')->withDetails($search_book)->withQuery ( $q );
+        else
+      return view ('homepage')->withMessage('No se encuentran datos');
     }
 }
