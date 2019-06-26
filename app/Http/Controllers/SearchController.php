@@ -84,7 +84,9 @@ class SearchController extends Controller
     }
     public function Searching(){
       $q = Input::get ( 'q' );
-      $search_book = Book::where('title','LIKE','%'.$q.'%')->get ();/*orWhere('email','LIKE','%'.$q.'%')->get();*/
+      $search_book = Book::where('title','LIKE','%'.$q.'%')
+      ->orWhere('description','LIKE','%'.$q.'%')
+      ->get();
       if ($search_book)
       return view('search')->withDetails($search_book)->withQuery ( $q );
         else
