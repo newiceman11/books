@@ -8,7 +8,7 @@ class Book extends Model
 {
 
       protected $fillable = [
-     'title','author_id','description',
+     'title','author_id','description','profile_image',
     ];
 
     public function authors()

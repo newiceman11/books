@@ -1,3 +1,6 @@
+@php
+ $array_items = \App\Item::all();
+@endphp
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">{{env('NAME')}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,6 +9,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      @foreach($array_items  as $item)
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('login') }}">{{$item->item_name}}<span class="sr-only">(current)</span></a>
+      </li>
+    @endforeach
         @guest
       <li class="nav-item active">
         <a class="nav-link" href="{{ route('login') }}">Login<span class="sr-only">(current)</span></a>

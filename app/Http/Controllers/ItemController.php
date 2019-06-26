@@ -13,8 +13,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-      $items = item::paginate(15);
-      return view('items.index',['array_item' => $items]);
+      $items = item::all();
+      return view('items.index',['array_items' => $items]);
     }
 
     /**

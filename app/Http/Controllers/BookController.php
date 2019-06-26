@@ -41,6 +41,7 @@ class BookController extends Controller
      */
     public function create()
     {
+      $path = $request->file('image')->store('img','public');
         return view('books.create');
     }
 

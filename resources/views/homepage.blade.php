@@ -49,6 +49,7 @@
         <th scope="col">NOMBRE</th>
         <th scope="col">TITULO</th>
         <th scope="col">RESEÑA</th>
+        <th scope="col">IMAGEN</th>
 
       </tr>
     </thead>
@@ -60,6 +61,8 @@
         <th scope="row">{{$book->name}}</th>
         <td>{{$book->title}}</td>
         <td>{{$book->description}}</td>
+        <td></td>
+
       </tr>
   @endforeach
   @endif
