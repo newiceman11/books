@@ -99,3 +99,18 @@
 color:#666;
 background-color:#f8f9fa;
 }
+/*****************DIV INSTITUCIONAL**************/
+
+.about{
+  border-radius: 5px;
+}
+
+.about h2{
+  padding-bottom: 15px;
+  padding-top: 20px;
+  font-size: 30px !important;
+  text-align: center;
+}
+.about p{
+  padding-bottom: 10px;
+}

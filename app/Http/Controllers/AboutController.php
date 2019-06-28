@@ -101,7 +101,10 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $deleteRow=About_site::findOrFail($id);
+      $deleteRow->delete();
+      return redirect('/home');
+
     }
 
     public function aboutList()

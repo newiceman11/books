@@ -29,6 +29,14 @@
             {{ Auth::user()->name }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @php
+          $array_users = \App\user::paginate(15);
+        @endphp
+
+         @if(Auth::user()->type == "admin")
+            <a class="dropdown-item" href="{{ route('home') }}">Panel Admin</a>
+         @endif
+
           <a class="dropdown-item" href="{{ route('logout') }}">  {{ __('Logout') }}</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf

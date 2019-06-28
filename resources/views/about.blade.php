@@ -4,9 +4,8 @@
 
 @extends('books.layout')
 @section('content')
-
-<div class="container">
-
+  @if(isset($array_about))
+    <div class="container">
   <h1>Listado de libros</h1>
   <br>
   <table class="table table-dark">
@@ -45,4 +44,10 @@
     </tbody>
   </table>
 </div>
-  @endsection
+@else
+  <div class="about">
+    <h2>NO SE ENCUENTRAN DATOS</h2>
+  </div>
+@endif
+
+@endsection
