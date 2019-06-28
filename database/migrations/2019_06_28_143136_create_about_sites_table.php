@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration
+class CreateAboutSitesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('item_name');
-            $table->string('url');
-            $table->timestamps();
+        Schema::create('about_sites', function (Blueprint $table) {
+          $table->increments('id');
+          $table->text('description_site');
+          $table->string('title');
+          $table->string('firm');
+          $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('about_sites');
     }
 }

@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class About extends Model
+class About_site extends Model
 {
   protected $fillable = [
-
-    'title','description','firm'
-    ];
+ 'title','description_site','firm',
+];
 }

@@ -65,8 +65,5 @@
                   </div>
               </div>
       </div>
-
-<div class="container">
-<h2>quienes somos?</h2>
-</div>
+      @include('aboutTable')
 @endsection

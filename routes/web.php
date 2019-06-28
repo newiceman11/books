@@ -29,6 +29,8 @@ Route::resource('map','MapController');
       return view('books.index');
   });
 });
+Route::get('/admin/about','AboutController@index')->name('admin-about');
+Route::resource('admin/about/crud','AboutController');
 /***************search********/
 Route::any('/search','SearchController@Searching');
-Route::get('/libros','BookController@bookTable')->name('books-list');
+Route::get('/book-list','BookController@bookTable')->name('books-list');

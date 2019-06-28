@@ -13,10 +13,10 @@
           <a href="{{ url('books-admin') }}" onclick="clickChange(this.innerHTML)">Libros</a>
         </li>
         <li>
-          <a href="#" onclick="clickChange(this.innerHTML)">Tiempo</a>
+          <a href="" onclick="clickChange(this.innerHTML)">Tiempo</a>
         </li>
         <li>
-          <a href="#" onclick="clickChange(this.innerHTML)">Anotaciones</a>
+          <a href="{{route('admin-about')}}" onclick="clickChange(this.innerHTML)">Anotaciones</a>
         </li>
         <li>
           <a href="#" onclick="clickChange(this.innerHTML)">Timeline</a>

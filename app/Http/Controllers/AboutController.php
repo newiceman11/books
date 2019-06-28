@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\About_site;
+use DB;
 use Illuminate\Http\Request;
+use View;
+use Input;
 
 class AboutController extends Controller
 {
@@ -13,7 +16,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+      //$site = About_sites::paginate(1);
+      //return view('aboutTable', ['array_site' => $site]);
+      return view('about');
     }
 
     /**
@@ -54,9 +59,11 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(  $id)
     {
-        //
+        $about = About_site::find($id);
+        //show the edit form and pass the nerd
+        return \View::make('about-edit')->with('array_about', $about);
     }
 
     /**
@@ -68,8 +75,23 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+      // process the login
+      $request->validate([
+          'title' => 'required',
+          'description_site' => 'required',
+          'firm'=> 'required',
+      ]);
+
+         $about = About_site::find($id);
+         $about->title= Input::get('title');
+         $about->description_site = Input::get('description_site');
+         $about->firm = Input::get('firm');
+         $about->save();
+
+         // redirect
+         return Redirect('home');
+
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -81,4 +103,10 @@ class AboutController extends Controller
     {
         //
     }
+
+    public function aboutList()
+    {
+
+    }
+
 }

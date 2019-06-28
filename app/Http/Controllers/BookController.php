@@ -6,7 +6,7 @@ use DB;
 use App\Book;
 use Illuminate\Http\Request;
 use Session;
-
+use Input;
 
 
 class BookController extends Controller

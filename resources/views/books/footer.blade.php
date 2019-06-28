@@ -1,3 +1,6 @@
+@php
+ $array_items = \App\Item::all();
+@endphp
 <div class="conatiner">
       <div class="bannerhovereffect">
           <img class="img-responsive" src="http://raiingkaeng.com/images/books-wallpaper/37618320-books-wallpaper.jpg" alt="">
@@ -9,59 +12,44 @@
   </div>
 
 
-<footer id="footer" class="footer-1">
+<footer id="footer" class="footer-1" >
 <div class="main-footer widgets-dark typo-light">
 <div class="container">
 <div class="row">
 
 <div class="col-xs-12 col-sm-6 col-md-3">
 <div class="widget subscribe no-box">
-<h5 class="widget-title">Alejandria.com<span></span></h5>
+  <!--class="widget-title" barrras-->
+<h5  style="text-align:center !important;">Alejandria.com<span></span></h5>
 <p>Biblioteca vitual adaptada a las últimas tecnológias</p>
 </div>
 </div>
 
-<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="col-xs-12 col-sm-6 col-md-3"style=" background-color:#222; text-align:center !important;">
 <div class="widget no-box">
-<h5 class="widget-title">Menú<span></span></h5>
+<h5 style="align:center !important ;">Menú<span></span></h5>
 <ul class="thumbnail-widget">
+@foreach($array_items  as $item)
 <li>
-<div class="thumb-content"><a href="#.">Get Started</a></div>
+<div class="thumb-content"><a href="{{ $item->url }}">{{$item->item_name}}</a></div>
 </li>
-<li>
-<div class="thumb-content"><a href="#.">Top Leaders</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="#.">Success Stories</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="#.">Event/Tickets</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="#.">News</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="#.">Lifestyle</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="#.">About</a></div>
-</li>
+  @endforeach
 </ul>
 </div>
 </div>
 
-<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="col-xs-12 col-sm-6 col-md-3"sty >
 <div class="widget no-box">
-<h5 class="widget-title">Get Started<span></span></h5>
+<h5>Get Started<span></span></h5>
 <p>Get access to your full Training and Marketing Suite.</p>
 <a class="btn" href="#." target="_blank">Register Now</a>
 </div>
 </div>
 
-<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="col-xs-12 col-sm-6 col-md-3" style=" background-color:#222; text-align:center !important;">
 
 <div class="widget no-box">
-<h5 class="widget-title">Contact Us<span></span></h5>
+<h5> Contact Us<span></span></h5>
 
 <p><a href="mailto:info@domain.com" title="glorythemes">info@domain.com</a></p>
 <ul class="social-footer2">
@@ -77,11 +65,11 @@
 </div>
 </div>
 
-<div class="footer-copyright">
+<div class="footer-copyright" style="margin-top:-20px !important;">
 <div class="container">
 <div class="row">
 <div class="col-md-12 text-center">
-<p>Copyright Company Name © 2016. All rights reserved.</p>
+<p>Copyright Juan Pablo Foos © 2019. All rights reserved.</p>
 </div>
 </div>
 </div>
