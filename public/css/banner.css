@@ -8,6 +8,7 @@
   position: relative;
   text-align: center;
   cursor: default;
+  opacity:0.9;
 }
 
 .bannerhovereffect .overlay {
