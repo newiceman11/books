@@ -11,12 +11,12 @@
     <ul class="navbar-nav mr-auto">
       @foreach($array_items  as $item)
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('login') }}">{{$item->item_name}}<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ $item->url }}">{{$item->item_name}}<span class="sr-only">(current)</span></a>
       </li>
     @endforeach
         @guest
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('login') }}">Login<span class="sr-only">(current)</span></a>
+      <li class="nav-item active" >
+        <a class="nav-link" style="border-radius:5 !important;" href="{{ route('login') }}">Login<span class="sr-only">(current)</span></a>
       </li>
         @if (Route::has('register'))
       <li class="nav-item">

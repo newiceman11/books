@@ -5,7 +5,7 @@
     @if(isset($details))
         <p>Resultado de busqueda <b> {{ $query }} </b></p>
     <h2>Detalles de libros</h2>
-    <table class="table table-striped" style=" color:#fff;">
+    <table class="table table-striped" style=" color:#fff; background-color:#454d55;">
         <thead>
             <tr>
                 <th>Titulo</th>

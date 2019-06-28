@@ -27,11 +27,7 @@ class BookController extends Controller
       ->get();
       return view('homepage', ['array_books' => $books]);*/
 
-      $books= DB::table('books')
-                  ->join('authors', 'authors.id', '=', 'books.author_id')
-                  ->select('books.*','authors.name')
-                  ->get();
-                  return view('homepage', ['array_books' => $books]);
+        return view('homepage');
     }
 
     /**
@@ -127,5 +123,13 @@ class BookController extends Controller
         Session::flash('message','Libro ha sido borrado  correctamente');
         return view('books.index');
 
+    }
+    public function bookTable()
+    {
+      $books= DB::table('books')
+                  ->join('authors', 'authors.id', '=', 'books.author_id')
+                  ->select('books.*','authors.name')
+                  ->get();
+                  return view('books.book', ['array_books' => $books]);
     }
 }

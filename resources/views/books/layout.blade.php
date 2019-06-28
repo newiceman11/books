@@ -7,7 +7,9 @@
     <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href=".././css/master.css"/>
+    <link rel="stylesheet" href=".././css/elements.css"/>
     <link rel="stylesheet" href=".././css/styles.css"/>
+    <link rel="stylesheet" href=".././css/banner.css"/>
     <script src="jquery-3.4.0.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
     <script>tinymce.init({selector:'textarea'});</script>

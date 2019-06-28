@@ -1,18 +1,29 @@
-<footer id="footer" class="footer-1" style="padding-top: 20px;">
+<div class="conatiner">
+      <div class="bannerhovereffect">
+          <img class="img-responsive" src="https://www.pixelstalk.net/wp-content/uploads/2016/06/Amazing-Old-Book-Desktop-Wallpapers.jpg" alt="">
+          <div class="overlay">
+
+          </div>
+      </div>
+
+  </div>
+
+
+<footer id="footer" class="footer-1">
 <div class="main-footer widgets-dark typo-light">
 <div class="container">
 <div class="row">
 
 <div class="col-xs-12 col-sm-6 col-md-3">
 <div class="widget subscribe no-box">
-<h5 class="widget-title">COMPANY NAME<span></span></h5>
-<p>About the company, little discription will goes here.. </p>
+<h5 class="widget-title">Alejandria.com<span></span></h5>
+<p>Biblioteca vitual adaptada a las últimas tecnológias</p>
 </div>
 </div>
 
 <div class="col-xs-12 col-sm-6 col-md-3">
 <div class="widget no-box">
-<h5 class="widget-title">Quick Links<span></span></h5>
+<h5 class="widget-title">Menú<span></span></h5>
 <ul class="thumbnail-widget">
 <li>
 <div class="thumb-content"><a href="#.">Get Started</a></div>

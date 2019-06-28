@@ -38,36 +38,35 @@
         </div>
       </form>
 
-</div>
+      <div class="container">
+          <!--<h1>bootstrap image thumbnail hover effect text</h1>-->
+      <div class="row">
+            <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12"style="height:100%; padding-top:30px;">
+                  <div class="hovereffect">
+                      <img class="img-responsive" src="./img/Letters-Flying-over-a-Book-540x304.jpg" alt="">
+                      <div class="overlay">
+                         <h2>VER</h2>
+                         <p class="info">Listado de libros <br>
+                         <a href="{{route('books-list')}}">Ver más</a></p>
+                      </div>
+                  </div>
+
+              </div>
+
+            <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12"style="height: 100%; padding-top:30px;">
+                  <div class="hovereffect">
+                      <img class="img-responsive" src="./img/The-World-in-a-Book-540x304.jpg" alt="">
+                      <div class="overlay">
+                         <h2>LECTORES</h2>
+                         <p class="info"> Unirse a sociedad de lectores.<br>
+                         <a href="#">Ver más</a></p>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+      </div>
+
 <div class="container">
-  <h1>Listado de libros</h1>
-  <br>
-  <table class="table table-dark" style="padding-top:100px!important;">
-
-    <thead>
-      <tr>
-        <th scope="col">NOMBRE</th>
-        <th scope="col">TITULO</th>
-        <th scope="col">RESEÑA</th>
-        <th scope="col">IMAGEN</th>
-
-      </tr>
-    </thead>
-
-    <tbody>
-      @if(!empty($array_books))
-        @foreach($array_books as $book)
-      <tr>
-        <th scope="row">{{$book->name}}</th>
-        <td>{{$book->title}}</td>
-        <td>{{$book->description}}</td>
-        <td></td>
-
-      </tr>
-  @endforeach
-  @endif
-    </tbody>
-  </table>
-
+<h2>quienes somos?</h2>
 </div>
 @endsection

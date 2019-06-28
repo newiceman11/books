@@ -1,0 +1,34 @@
+
+
+.bannerhovereffect {
+  margin-top: 40px;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.bannerhovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background-color: rgba(75,75,75,0.4);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.bannerhovereffect:hover .overlay {
+  background-color: rgba(48, 152, 157, 0.4);
+}
+
+.bannerhovereffect img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}

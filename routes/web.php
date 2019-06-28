@@ -31,3 +31,4 @@ Route::resource('map','MapController');
 });
 /***************search********/
 Route::any('/search','SearchController@Searching');
+Route::get('/libros','BookController@bookTable')->name('books-list');
