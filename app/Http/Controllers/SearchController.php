@@ -95,12 +95,12 @@ class SearchController extends Controller
         return view('search')->withDetails($search_book)->withQuery ( $q );
       }
       else{
-        return view ('homepage')->withMessage('No se encuentran datos');
+        return redirect('/')->withMessage('No se encuentran datos');
       }
-      
+
     }
     else {
-      return view ('homepage')->withMessage('No se encuentran datos');
+      return redirect('/')->withMessage('No se encuentran datos');
     }
   }
 }

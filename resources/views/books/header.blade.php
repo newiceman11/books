@@ -51,6 +51,6 @@
   </div>
   @if(Request::is ('/'))
   @else
-        <button type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
+        <button style="" type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
   @endif
 </nav>
