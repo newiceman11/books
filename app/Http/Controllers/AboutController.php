@@ -84,7 +84,8 @@ class AboutController extends Controller
 
          $about = About_site::find($id);
          $about->title= Input::get('title');
-         $about->description_site = Input::get('description_site');
+         $about->description = Input::get('description_site');
+         $about->author= Input::get('description_site');
          $about->firm = Input::get('firm');
          $about->save();
 

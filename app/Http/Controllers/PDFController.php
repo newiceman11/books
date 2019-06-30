@@ -16,7 +16,7 @@ class PDFController extends Controller
      */
     public function index()
     {
-      return view('books.myPDF');
+      //return view('books.myPDF');
 
     }
 
@@ -44,16 +44,30 @@ class PDFController extends Controller
             'description' => 'required',
         ]);
 
-        PDF::create($request->all());
+        //PDF::create($request->all());
+        //Session::flash('message','Libro creado correctamente');
+        //return redirect()->route('PDFs.index');
+        $product = new Book($request->input()) ;
+
+ if($file = $request->hasFile('product_image')) {
+
+    $file = $request->file('product_image') ;
+
+    $fileName = $file->getClientOriginalName() ;
+    $destinationPath = public_path().'/images/' ;
+    $file->move($destinationPath,$fileName);
+    $product->product_image = $fileName ;
+}
+$product->save() ;
+ return redirect()->route('upload-files.index')
+                ->with('success','You have successfully uploaded your files');
+}
 
 
-        Session::flash('message','Libro creado correctamente');
-        return redirect()->route('PDFs.index');
 
 
 
 
-    }
 
     /**
      * Display the specified resource.
@@ -63,7 +77,7 @@ class PDFController extends Controller
      */
     public function show(PDF $PDF)
     {
-       return view('PDFs.show',compact('PDF'));
+
     }
 
     /**
@@ -75,7 +89,6 @@ class PDFController extends Controller
     public function edit(PDF $PDF)
     {
 
-         return view('PDFs.edit',compact('PDF'));
 
     }
 
@@ -119,5 +132,4 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
 }

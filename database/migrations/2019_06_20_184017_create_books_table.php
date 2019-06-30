@@ -16,10 +16,10 @@ class CreateBooksTable extends Migration
 
     Schema::create('books', function (Blueprint $table) {
       $table->increments('id');
-      $table->unsignedInteger('author_id');
+      $table->integer('author_id')->unsigned();
       $table->string('title');
       $table->text('description');
-      $table->string('profile_image')->nullable();
+      $table->string('pdf_file')->nullable();
       $table->timestamps();
       $table->foreign('author_id')->references('id')->on('authors')
       ->onDelete('cascade')

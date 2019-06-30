@@ -49,5 +49,5 @@
     <h2>NO SE ENCUENTRAN DATOS</h2>
   </div>
 @endif
-
+@include('books.partials.banner')
 @endsection

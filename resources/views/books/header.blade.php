@@ -34,7 +34,7 @@
         @endphp
 
          @if(Auth::user()->type == "admin")
-            <a class="dropdown-item" href="{{ route('home') }}">Panel Admin</a>
+            <a class="dropdown-item" href="{{ route('/admin/menu') }}">Panel Admin</a>
          @endif
 
           <a class="dropdown-item" href="{{ route('logout') }}">  {{ __('Logout') }}</a>

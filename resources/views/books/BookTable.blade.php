@@ -1,3 +1,4 @@
+@extends('books.layout')
 @section(content)
 <!-- slider-->
 <div class="container">

@@ -37,7 +37,7 @@ class BookController extends Controller
      */
     public function create()
     {
-      $path = $request->file('image')->store('img','public');
+      //$path = $request->file('image')->store('img','public');
         return view('books.create');
     }
 
@@ -52,13 +52,27 @@ class BookController extends Controller
        $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'pdf_file'=>'mimes:pdf',
         ]);
 
-        Book::create($request->all());
+      //  Book::create($request->all());
+      $newBook = new Book($request->input()) ;
 
 
+ if($file = $request->hasFile('pdf_file')) {
+
+    $file = $request->file('pdf_file') ;
+    $fileName = $file->getClientOriginalName() ;
+    $destinationPath = public_path().'/pdf/' ;
+    $file->move($destinationPath,$fileName);
+    $newBook->pdf_file = $fileName ;
+}
+
+        $newBook->author_id = Input::get('author_id');
+        $newBook->description = Input::get('description');;
+        $newBook->save() ;
         Session::flash('message','Libro creado correctamente');
-        return view('books.index');
+        return redirect('admin/books');
 
 
 
@@ -117,13 +131,14 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        $book->delete();
-        Session::flash('message','Libro ha sido borrado  correctamente');
-        return view('books.index');
+      $books = Book::find($id);
+      $books->delete();
+      return Redirect('/admin/books');
 
     }
+
     public function bookTable()
     {
       $books= DB::table('books')
@@ -131,5 +146,14 @@ class BookController extends Controller
                   ->select('books.*','authors.name')
                   ->get();
                   return view('books.book', ['array_books' => $books]);
+    }
+
+    public function authorBook()
+    {
+      $books= DB::table('books')
+                  ->join('authors', 'authors.id', '=', 'books.author_id')
+                  ->select('books.*','authors.name')
+                  ->get();
+                  return view('books.index', ['array_books' => $books]);
     }
 }

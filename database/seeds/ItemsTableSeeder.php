@@ -19,8 +19,8 @@ class ItemsTableSeeder extends Seeder
 
     DB::table('items')->insert([
       'item_name' => 'Libros',
-      'url' => '/libros',
-      
+      'url' => '/book-list',
+
     ]);
 
     DB::table('items')->insert([

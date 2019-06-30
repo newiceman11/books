@@ -1,19 +1,10 @@
 @php
  $array_items = \App\Item::all();
 @endphp
-<div class="conatiner">
-      <div class="bannerhovereffect">
-          <img class="img-responsive" src="http://raiingkaeng.com/images/books-wallpaper/37618320-books-wallpaper.jpg" alt="">
-          <div class="overlay">
-
-          </div>
-      </div>
-
-  </div>
 
 
 <footer id="footer" class="footer-1" >
-<div class="main-footer widgets-dark typo-light">
+<div class="main-footer widgets-dark typo-light container-fluid">
 <div class="container">
 <div class="row">
 

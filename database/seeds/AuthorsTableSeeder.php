@@ -15,7 +15,7 @@ class AuthorsTableSeeder extends Seeder
         DB::table('authors')->insert([
               'id'=>1,
               'name'=>'alguien 1',
-              'last name'=>'algun apellido',
+              'last_name'=>'algun apellido',
 
                //password=123456
          ]);
@@ -23,14 +23,14 @@ class AuthorsTableSeeder extends Seeder
         DB::table('authors')->insert([
                 'id'=>2,
                'name'=>'alguien 2',
-               'last name'=>'algun apellido',
+               'last_name'=>'algun apellido',
                //password=123456
          ]);
 
         DB::table('authors')->insert([
                 'id'=>3,
                'name'=>'alguien 3',
-               'last name'=>'algun apellido',
+               'last_name'=>'algun apellido',
                //password=123456
          ]);
       }

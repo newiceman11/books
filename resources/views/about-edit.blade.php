@@ -29,5 +29,6 @@
   </form>
 </div>
 <br>
+@include('books.partials.banner')
 <br>
 @endsection

@@ -10,16 +10,16 @@
     <nav>
       <ul class="nav-bar">
         <li>
-          <a href="{{ url('books-admin') }}" onclick="clickChange(this.innerHTML)">Libros</a>
+          <a href="{{ url('admin/books') }}" onclick="clickChange(this.innerHTML)">Libros</a>
         </li>
         <li>
           <a href="" onclick="clickChange(this.innerHTML)">Tiempo</a>
         </li>
         <li>
-          <a href="{{route('admin-about')}}" onclick="clickChange(this.innerHTML)">Anotaciones</a>
+          <a href="{{route('admin/about')}}" onclick="clickChange(this.innerHTML)">Anotaciones</a>
         </li>
         <li>
-          <a href="#" onclick="clickChange(this.innerHTML)">Timeline</a>
+          <a href="{{route('authors.create')}}" onclick="clickChange(this.innerHTML)">Autores</a>
         </li>
         <li>
           <a href="#" onclick="clickChange(this.innerHTML)">Configuraciones</a>
@@ -86,6 +86,7 @@
 @else
 <h2>hola</h2>
 @endif
+@include('books.partials.banner')
 @endsection
 <script>
 function clickChange(value) {

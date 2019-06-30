@@ -25,5 +25,5 @@
         </div>
     </div>
 
-
+@include('books.partials.banner')
 @endsection

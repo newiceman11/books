@@ -66,4 +66,5 @@
               </div>
       </div>
       @include('aboutTable')
+      @include('books.partials.banner')
 @endsection

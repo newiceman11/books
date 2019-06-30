@@ -9,7 +9,6 @@
         <th scope="col">TITULO</th>
         <th scope="col">RESEÑA</th>
         <th scope="col">IMAGEN</th>
-
       </tr>
     </thead>
 
@@ -20,8 +19,11 @@
         <th scope="row">{{$book->name}}</th>
         <td>{{$book->title}}</td>
         <td>{{$book->description}}</td>
-        <td></td>
-
+        @if(isset($book->pdf_file))
+        <td> <a href='{{ asset("pdf/$book->pdf_file") }}'><button class="btn btn-success">{{ $book->pdf_file }}</button></a></td>
+        @else
+        <td> <p>NO EXISTE ARHIVO</p>  </td>
+        @endif
       </tr>
   @endforeach
   @endif
@@ -29,3 +31,4 @@
   </table>
 
 </div>
+@include('books.partials.banner')

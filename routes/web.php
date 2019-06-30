@@ -14,22 +14,23 @@ Route::get('/', 'BookController@index');
 /*Route::get('/', function () {
     return view('homepage');
 });*/
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/menu', 'HomeController@index')->name('/admin/menu');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
-Route::resource('books','BookController');
+Route::resource('admin/books','BookController');
 Route::group(['middleware' => ['auth', 'admin']], function() {
-Route::resource('books','BookController');
 Route::resource('users','UserController');
-Route::get('/upload-pdf', 'PDFController@index')->name('pdf');
+Route::get('admin/upload-pdf', 'PDFController@index')->name('pdf');
 //Route::resource('item','ItemController');
 Route::resource('map','MapController');
-  // END admin
-  Route::get('books-admin', function () {
-      return view('books.index');
-  });
+//Route::get('/admin/authors/crud','AuthorController@create')->name('authors');
+Route::resource('/admin/authors', 'AuthorController');
+Route::get('/admin/books','BookController@authorBook')->name('admin/books');
 });
-Route::get('/admin/about','AboutController@index')->name('admin-about');
+
+
+
+Route::get('/admin/about','AboutController@index')->name('admin/about');
 Route::resource('admin/about/crud','AboutController');
 /***************search********/
 Route::any('/search','SearchController@Searching');
