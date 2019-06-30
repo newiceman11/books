@@ -42,5 +42,5 @@
 
     <button type="submit" class="btn btn-primary" onclick="return confirm('Libro creado correctamente')">enviar</button>
   </form>
-</div>
+
 @endsection

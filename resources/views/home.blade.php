@@ -13,7 +13,7 @@
           <a href="{{ url('admin/books') }}" onclick="clickChange(this.innerHTML)">Libros</a>
         </li>
         <li>
-          <a href="" onclick="clickChange(this.innerHTML)">Tiempo</a>
+          <a href="{{route('slider.index')}}" onclick="clickChange(this.innerHTML)">Slider</a>
         </li>
         <li>
           <a href="{{route('admin/about')}}" onclick="clickChange(this.innerHTML)">Anotaciones</a>

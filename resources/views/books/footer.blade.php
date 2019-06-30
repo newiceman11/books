@@ -16,7 +16,7 @@
 </div>
 </div>
 
-<div class="col-xs-12 col-sm-6 col-md-3"style=" background-color:#222; text-align:center !important;">
+<div class="col-xs-12 col-sm-6 col-md-3"style=" text-align:center !important;">
 <div class="widget no-box">
 <h5 style="align:center !important ;">Menú<span></span></h5>
 <ul class="thumbnail-widget">
@@ -37,7 +37,7 @@
 </div>
 </div>
 
-<div class="col-xs-12 col-sm-6 col-md-3" style=" background-color:#222; text-align:center !important;">
+<div class="col-xs-12 col-sm-6 col-md-3" style=" text-align:center !important;">
 
 <div class="widget no-box">
 <h5> Contact Us<span></span></h5>
