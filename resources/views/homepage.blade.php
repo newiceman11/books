@@ -1,31 +1,23 @@
 @extends('books.layout')
 @section('content')
 <!-- slider-->
-
-  <div class="wrap">
-  <header>
-    <label for="slide-1-trigger">Slide 1</label>
-    <label for="slide-2-trigger">Slide 2</label>
-    <label for="slide-3-trigger">Slide 3</label>
-    <label for="slide-4-trigger">Slide 4</label>
-  </header>
-  <input id="slide-1-trigger" type="radio" name="slides" checked>
-  <section class="slide slide-one">
-    <!--<h1>Headline One</h1>-->
-  </section>
-  <input id="slide-2-trigger" type="radio" name="slides">
-  <section class="slide slide-two">
-    <!--<h1>Headline One</h1>-->
-  </section>
-  <input id="slide-3-trigger" type="radio" name="slides">
-  <section class="slide slide-three">
-    <!--<h1>Headline One</h1>-->
-  </section>
-  <input id="slide-4-trigger" type="radio" name="slides">
-  <section class="slide slide-four">
-    <!--<h1>Headline One</h1>-->
-  </section>
+@php
+ $array_sliders = \App\Slider::all();
+@endphp
+<!-- remember to add new divs if you change $slides_number -->
+<div class="slider" id="main-slider"><!-- outermost container element -->
+	<div class="slider-wrapper"><!-- innermost wrapper element -->
+	   @foreach($array_sliders as $slider)
+		<img src='{{ asset("img/slider/$slider->image_file") }}'alt="Third" class="slide" />
+    @endforeach
+	</div>
+	<div class="slider-nav"><!-- "Previous" and "Next" actions -->
+		<button class="slider-previous">Previous</button>
+		<button class="slider-next">Next</button>
+	</div>
 </div>
+
+
 <!--endslider-->
    </form>
 
@@ -68,3 +60,77 @@
       @include('aboutTable')
       @include('books.partials.banner')
 @endsection
+@push('scripts')
+<script>
+(function() {
+
+function Slideshow( element ) {
+  this.el = document.querySelector( element );
+  this.init();
+}
+
+Slideshow.prototype = {
+  init: function() {
+    this.wrapper = this.el.querySelector( ".slider-wrapper" );
+    this.slides = this.el.querySelectorAll( ".slide" );
+    this.previous = this.el.querySelector( ".slider-previous" );
+    this.next = this.el.querySelector( ".slider-next" );
+    this.index = 0;
+    this.total = this.slides.length;
+
+    this.actions();
+  },
+  _slideTo: function( slide ) {
+    var currentSlide = this.slides[slide];
+    currentSlide.style.opacity = 1;
+
+    for( var i = 0; i < this.slides.length; i++ ) {
+      var slide = this.slides[i];
+      if( slide !== currentSlide ) {
+        slide.style.opacity = 0;
+      }
+    }
+  },
+  actions: function() {
+    var self = this;
+    self.next.addEventListener( "click", function() {
+      self.index++;
+      self.previous.style.display = "block";
+
+      if( self.index == self.total - 1 ) {
+        self.index = self.total - 1;
+        self.next.style.display = "none";
+      }
+
+      self._slideTo( self.index );
+
+    }, false);
+
+    self.previous.addEventListener( "click", function() {
+      self.index--;
+      self.next.style.display = "block";
+
+      if( self.index == 0 ) {
+        self.index = 0;
+        self.previous.style.display = "none";
+      }
+
+      self._slideTo( self.index );
+
+    }, false);
+  }
+
+
+};
+
+document.addEventListener( "DOMContentLoaded", function() {
+
+  var slider = new Slideshow( "#main-slider" );
+
+});
+
+
+})();
+
+</script>
+@endpush

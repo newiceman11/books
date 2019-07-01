@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    @stack('scripts')
     <!-- Required meta tags -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href=".././css/elements.css"/>
     <link rel="stylesheet" href=".././css/styles.css"/>
     <link rel="stylesheet" href=".././css/banner.css"/>
+    <link rel="stylesheet" href=".././css/slider.css"/>
     <script src="jquery-3.4.0.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
     <script>tinymce.init({selector:'textarea'});</script>

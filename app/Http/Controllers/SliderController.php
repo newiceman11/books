@@ -15,7 +15,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('sliders.slider');
+      $sliders=Slider::all();
+      return view('sliders.slider', ['array_sliders' => $sliders]);
     }
 
     /**
@@ -46,7 +47,7 @@ class SliderController extends Controller
 
       if($file = $request->hasFile('image_file')) {
         $file = $request->file('image_file') ;
-        Image::make($file)->resize(320,240)->save();
+        Image::make($file)->resize(1320,400)->save();
         $fileName = $file->getClientOriginalName() ;
         $destinationPath = public_path().'/img/slider' ;
         $file->move($destinationPath,$fileName);
@@ -54,8 +55,8 @@ class SliderController extends Controller
       }
       $newSlider->name = Input::get('name');
       $newSlider->save() ;
-      Session::flash('message','Libro creado correctamente');
-      return redirect('admin/books');
+      Session::flash('message','imagen creada correctamente');
+      return redirect('/slider');
     }
 
     /**
@@ -100,6 +101,8 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $deleteRow=Slider::findOrFail($id);
+      $deleteRow->delete();
+      return redirect('/slider');
     }
 }
