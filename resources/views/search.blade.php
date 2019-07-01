@@ -23,4 +23,7 @@
     </table>
     @endif
 </div>
+<br>
+<br>
+@include('books.partials.banner')
 @endsection

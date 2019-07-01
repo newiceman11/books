@@ -55,10 +55,11 @@ class SliderController extends Controller
       }
       $newSlider->name = Input::get('name');
       $newSlider->save() ;
+      if($newSlider){
       Session::flash('message','imagen creada correctamente');
       return redirect('/slider');
     }
-
+}
     /**
      * Display the specified resource.
      *
@@ -103,6 +104,7 @@ class SliderController extends Controller
     {
       $deleteRow=Slider::findOrFail($id);
       $deleteRow->delete();
+      Session::flash('message-delete','imagen eliminada correctamente');
       return redirect('/slider');
     }
 }

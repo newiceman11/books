@@ -11,7 +11,6 @@
   <div class="form-group">
 
   <label class="control-label">Subir imagen  </label><br>
-
   <input type="file" class="filestyle" data-icon="false" name="image_file">
 
   </div>
@@ -22,21 +21,22 @@
     <label for="exampleInputEmail1">Nombre</label>
     <input name="name" class="form-control col-xl-6 col-md-3 col-sm-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
   </div>
-<button type="submit" class="btn btn-primary" onclick="return confirm('imagen creada correctamente')">enviar</button>
+<button type="submit" class="btn btn-primary">enviar</button>
 </form>
 </div>
 <br>
 <br>
   @if($array_sliders && $array_sliders->count() >0)
 <table class="table table-dark">
-  @if (Session::has('success_msg'))
-  <div class="alert alert-info">{{ Session::get('success_msg') }}</div>
+  @if (Session::has('message'))
+    <div class="alert alert-info">{{ Session::get('message') }}</div>
   @endif
-  @if (Session::has('msg'))
-  <div class="alert alert-info">{{ Session::get('msg') }}</div>
+  @if (Session::has('message-error'))
+    <div class="alert alert-danger">{{ Session::get('message-error') }}</div>
   @endif
-  @if (Session::has('msg'))
-  <div class="alert alert-info">{{ Session::get('msg-delete') }}</div>
+
+  @if (Session::has('message-delete'))
+    <div class="alert  alert-success">{{ Session::get('message-delete') }}</div>
   @endif
   <thead>
     <tr>
