@@ -10,11 +10,27 @@
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          @foreach($array_items  as $item)
-          <li class="nav-item">
-            <a class="nav-link" href="{{ $item->url }}">{{$item->item_name}}<span class="sr-only">(current)</span></a>
-          </li>
-        @endforeach
+          @foreach($array_items as $menu)
+           @if($menu->sub_items->isEmpty())
+           <li class="nav-menu">
+             <a class="nav-link" href="{{ $menu->url }}">{{$menu->item_name}}<span class="sr-only">(current)</span></a>
+           </li>
+
+           @else
+             <li class="nav-menu dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 {{ $menu->item_name }}
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                  @foreach($menu->sub_items as $sub)
+                     <a class="nav-link" href="{{ $sub->url }}" style="color:black !important;">{{$sub->subitem_name}}</a>
+                  @endforeach
+
+               </div>
+
+             </li>
+           @endif
+         @endforeach
             @guest
           <li class="nav-item active" >
             <a class="nav-link" style="border-radius:5 !important;" href="{{ route('login') }}">Login<span class="sr-only">(current)</span></a>

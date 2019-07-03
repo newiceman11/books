@@ -22,10 +22,10 @@
           <a href="{{route('authors.create')}}" onclick="clickChange(this.innerHTML)">Autores</a>
         </li>
         <li>
-          <a href="#" onclick="clickChange(this.innerHTML)">Configuraciones</a>
+          <a href="" onclick="clickChange(this.innerHTML)">Configuraciones</a>
         </li>
         <li>
-          <a href="#" onclick="clickChange(this.innerHTML)">Buscar</a>
+          <a href="{{route('items.index')}}" onclick="clickChange(this.innerHTML)">Menus</a>
         </li>
       </ul>
     </nav>

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Item;
+use App\SubItem;
 class ItemController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class ItemController extends Controller
     public function index()
     {
       $items = item::all();
-      return view('items.index',['array_items' => $items]);
+      return view('menus.menu',['array_items' => $items]);
     }
 
     /**
@@ -35,7 +36,8 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          Item::create($request->all());
+          return redirect('admin/items');
     }
 
     /**
@@ -46,7 +48,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -80,6 +82,22 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $item = Item::find($id);
+      $item->delete();
+      return Redirect('/admin/items');
     }
+    public function store_sub(Request $request)
+    {
+
+          SubItem::create($request->all());
+          return redirect('admin/items');
+    }
+
+    public function destroy_sub($id)
+    {
+      $Sub = SubItem::find($id);
+      $Sub->delete();
+      return Redirect('/admin/items');
+    }
+
 }

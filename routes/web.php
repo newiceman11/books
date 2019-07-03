@@ -30,6 +30,9 @@ Route::get('/admin/books','BookController@authorBook')->name('admin/books');
 });
 Route::get('/admin/about','AboutController@index')->name('admin/about');
 Route::resource('admin/about/crud','AboutController');
+Route::resource('admin/items','ItemController');
+Route::post('admin/sub-item/create','ItemController@store_sub')->name('store.sub');
+Route::delete('admin/sub-item/delete/{id}','ItemController@destroy_sub')->name('destroy.sub');
 /***************END ADMIN ROUTES********/
 Route::any('/search','SearchController@Searching');
 Route::get('/book-list','BookController@bookTable')->name('books-list');
