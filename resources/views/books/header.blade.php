@@ -75,6 +75,17 @@
         </form>
       </div>
       @if(Request::is ('/'))
+      <ul class="social-icons">
+        <center>
+          <li><a href="" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-google-plus"></i></a></li
+        </center>
+          </ul>
+        </div>
       @else
             <button style="" type="button" class="btn btn-dark" onclick="history.go(-1); return false;">Volver</button>
       @endif

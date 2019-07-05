@@ -13,6 +13,6 @@ class SubItem extends Model
     public function item()
 {
 
-   return $this->belongsTo(Author::class, 'foreign_key','item_id');
+   return $this->belongsTo(Item::class, 'foreign_key','item_id');
 }
 }
