@@ -22,7 +22,7 @@
           <a href="{{route('authors.create')}}" onclick="clickChange(this.innerHTML)">Autores</a>
         </li>
         <li>
-          <a href="" onclick="clickChange(this.innerHTML)">Configuraciones</a>
+          <a href="{{route('blog.index')}}" onclick="clickChange(this.innerHTML)">Blog</a>
         </li>
         <li>
           <a href="{{route('items.index')}}" onclick="clickChange(this.innerHTML)">Menus</a>

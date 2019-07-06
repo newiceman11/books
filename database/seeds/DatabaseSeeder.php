@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SubItemTableSeeder::class);
         $this->call(BooksTableSeeder::class);
         $this->call(AboutTableSeeder::class);
+        $this->call(BlogTableSeeder::class);
     }
 }
 // write on terminal

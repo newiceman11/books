@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Input;
 use Illuminate\Http\Request;
-
+use App\Blog;
 class BlogController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-  
+        return view('blogs.blog-create');
     }
 
     /**
@@ -23,8 +23,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -32,9 +31,18 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+   }
     public function store(Request $request)
     {
-        //
+      $request->validate([
+        'title' => 'required',
+        'content' => 'required',
+        //'posted' => 'required',
+
+      ]);
+
+      Blog::create($request->all());
+      return redirect('admin/blog');
     }
 
     /**
@@ -54,9 +62,10 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Blog $blog)
     {
-        //
+      //se intancia la c
+        return view('blogs.blog-edit',compact('blog'));
     }
 
     /**
@@ -66,9 +75,20 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $blog)
     {
-        //
+      $request->validate([
+        'title' => 'required',
+        'content' => 'required',
+      ]);
+    /*  $blog = Blog::find($id);
+      $blog->title = Input::get('title');
+      $blog->content = Input::get('content');;
+      $blog->save();*/
+
+      Blog::find($blog)->update($request->all());
+      //Session::flash('message','Libro actualizado correctamente');
+      return redirect('admin/blog');
     }
 
     /**
@@ -79,7 +99,9 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $blogs = Blog::find($id);
+      $blogs->delete();
+      return Redirect('/admin/blog');
     }
     public function blog()
     {

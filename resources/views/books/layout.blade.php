@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    @stack('styles')
     @stack('scripts')
 
     <!-- Required meta tags -->

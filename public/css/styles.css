@@ -3,7 +3,7 @@
 }
 
 .logotext{
-	font-family: 'Lobster', cursive;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 24px;
 }
 
@@ -44,7 +44,7 @@ background-color: #383B42;
 .menu-container h1 {
 color: #dbdbdb;
 font-size: 25px;
-font-family: Arial;
+font-family: 'Montserrat', sans-serif;
 text-align: center;
 border-bottom: 1px solid rgba(101, 116, 134, 0.57);
 padding-bottom: 15px;
@@ -57,7 +57,7 @@ flex-direction: column;
 margin-top: 0;
 padding: 0px 0px 10px 10px;
 font-size: 22px;
-font-family: Muli, sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
 
 .nav-bar > li {
@@ -131,7 +131,7 @@ background-color: #e0eaf1;
 .option h2 {
 color: #8e8e8e;
 font-size: 25px;
-font-family: Muli, sans-serif;
+font-family: 'Montserrat', sans-serif;
 border-bottom: 1px solid rgba(101, 116, 134, 0.57);
 padding-bottom: 12px;
 margin-bottom: 0;
