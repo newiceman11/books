@@ -24,7 +24,7 @@ class ItemsTableSeeder extends Seeder
     ]);
 
     DB::table('items')->insert([
-      'item_name'=>'foros',
+      'item_name'=>'News',
       'url' => '/foros',
 
     ]);

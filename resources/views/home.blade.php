@@ -16,7 +16,7 @@
           <a href="{{route('slider.index')}}" onclick="clickChange(this.innerHTML)">Slider</a>
         </li>
         <li>
-          <a href="{{route('admin/about')}}" onclick="clickChange(this.innerHTML)">Anotaciones</a>
+          <a href="{{route('admin/about')}}" onclick="clickChange(this.innerHTML)">Institucional</a>
         </li>
         <li>
           <a href="{{route('authors.create')}}" onclick="clickChange(this.innerHTML)">Autores</a>
@@ -35,7 +35,7 @@
     <div class="container">
       <br>
       <table class="table table-dark">
-        <a class= "btn btn-info btn mb-3" href="{{route('users.create')}}">Agregar usuarios</a>
+        <!--<a class= "btn btn-info btn mb-3" href="{{url('users/create')}}">Agregar usuarios</a>-->
         @if (Session::has('success_msg'))
         <div class="alert alert-info">{{ Session::get('success_msg') }}</div>
         @endif
@@ -51,7 +51,7 @@
             <th scope="col">NOMBRE</th>
             <th scope="col">EMAIL</th>
             <th scope="col">ROL</th>
-            <th scope="col">EDITAR</th>
+            <!--<th scope="col">EDITAR</th>-->
             <th scope="col">ELIMINAR</th>
             <th scope="col">MOSTRAR</th>
           </tr>
@@ -64,17 +64,23 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->type}}</td>
-            <td> <a class="btn btn-info" href="">Editar</a></td>
+            
+
+           <!-- <td> <a class="btn btn-info" href="{{route('crud.edit', $user->id)}}">Editar</a></td>-->
+          
             <td>
-              <form action="" method="POST">
+              <form action="{{ route('users.destroy',$user->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Quiere borrar el registro?')" >Eliminar</button>
-
+                 @if ($user->type !="admin")
+                  <button type="submit" class="btn btn-danger" onclick="return confirm('Quiere borrar el registro?')" >Eliminar</button>
+                 @endif
               </form>
             </td>
-            <td> <a href=""><button class="btn btn-success">Mostrar</button></a></td>
+
+          
+          
+            <td><button class="btn btn-success">Mostrar</button></a></td>
           </tr>
           @endforeach
         </tbody>

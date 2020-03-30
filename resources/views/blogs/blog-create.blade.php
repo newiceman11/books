@@ -71,4 +71,6 @@
       </tbody>
     </table>
   </div>
+  </div>
+@include('books.partials.banner')
 @endsection

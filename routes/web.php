@@ -34,6 +34,7 @@ Route::resource('admin/items','ItemController');
 Route::post('admin/sub-item/create','ItemController@store_sub')->name('store.sub');
 Route::delete('admin/sub-item/delete/{id}','ItemController@destroy_sub')->name('destroy.sub');
 Route::resource('admin/blog','BlogController');
+//Route::resource('admin/blog','BlogController');
 /***************END ADMIN ROUTES********/
 Route::any('/search','SearchController@Searching');
 Route::get('/book-list','BookController@bookTable')->name('books-list');

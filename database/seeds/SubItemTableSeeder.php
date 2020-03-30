@@ -12,7 +12,7 @@ class SubItemTableSeeder extends Seeder
     public function run()
     {
       DB::table('sub_items')->insert([
-             'subitem_name' => 'Blog',
+             'subitem_name' => 'Post',
              'url' => '/blog',
              'item_id' => 3,
              'created_at' => now(),

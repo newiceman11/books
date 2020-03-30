@@ -31,9 +31,9 @@
 
 <div class="col-xs-12 col-sm-6 col-md-3"sty >
 <div class="widget no-box">
-<h5>Get Started<span></span></h5>
-<p>Get access to your full Training and Marketing Suite.</p>
-<a class="btn" href="#." target="_blank">Register Now</a>
+<h5>Alejandri.com<span></span></h5>
+<p>La mejor biblioteca virtual.</p>
+<a class="btn" href="/register" target="_blank">Registrarse</a>
 </div>
 </div>
 

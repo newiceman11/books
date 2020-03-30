@@ -4,7 +4,7 @@
  $array_blogs = \App\Blog::all();
 @endphp
   <div class="header">
-  <div class="avatar"><center><img src="https://s3.amazonaws.com/37assets/svn/765-default-avatar.png"></center></div>
+  <div class="avatar"><center><img src="./img/admin.jpg"></center></div>
 
   <h1 class="name">Administrador</h1>
     <ul class="social-icons">
@@ -31,4 +31,5 @@
       <p class="post-info">{{$blog->created_at}}</p>
     </div>
     @endforeach
+@include('books.partials.banner')
 @endsection

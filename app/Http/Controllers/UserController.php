@@ -16,8 +16,8 @@ class UserController extends Controller
     public function index()
     {
       //$users = [];
-      $array_users = User::paginate(15);
-      return view('views.home')->with($array_users);
+      //$array_users = User::paginate(15);
+      return view("");
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        
     }
 
     /**
@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('users.user-show');
     }
 
     /**
@@ -83,6 +83,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $deleteRow=User::findOrFail($id);
+      $deleteRow->delete();
+      Session::flash('message-delete','Usuario eliminado correctamente');
+      return view("home");
     }
 }
